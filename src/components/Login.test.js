@@ -13,8 +13,20 @@ test("password input should be rendered", () => {
   expect(paswordInputEl).toBeInTheDocument();
 });
 
-test("button input should be rendered", () => {
+test("button should be rendered", () => {
   render(<Login />);
   const buttonInputEl = screen.getByRole("button");
   expect(buttonInputEl).toBeInTheDocument();
+});
+
+test("username input should be empty", () => {
+  render(<Login />);
+  const userInputEl = screen.getByPlaceholderText(/username/i);
+  expect(userInputEl.value).toBe("")
+});
+
+test("PASSWORD input should be empty", () => {
+  render(<Login />);
+  const paswordInputEl = screen.getByPlaceholderText(/password/i);
+  expect(paswordInputEl.value).toBe("")
 });
