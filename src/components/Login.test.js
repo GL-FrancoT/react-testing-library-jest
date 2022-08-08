@@ -55,6 +55,12 @@ test("button should be disabled", () => {
   expect(buttonInputEl).toBeDisabled();
 });
 
+test("loading should not be rendered", () => {
+  render(<Login />);
+  const buttonEl = screen.getByRole("button");
+  expect(buttonEl).not.toHaveTextContent(/please wait/i);
+});
+
 test("error message should not be visible", () => {
   render(<Login />);
   const errorEl = screen.getByTestId("error");
