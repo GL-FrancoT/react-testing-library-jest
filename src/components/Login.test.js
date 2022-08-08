@@ -22,17 +22,23 @@ test("button should be rendered", () => {
 test("username input should be empty", () => {
   render(<Login />);
   const userInputEl = screen.getByPlaceholderText(/username/i);
-  expect(userInputEl.value).toBe("")
+  expect(userInputEl.value).toBe("");
 });
 
 test("password input should be empty", () => {
   render(<Login />);
   const paswordInputEl = screen.getByPlaceholderText(/password/i);
-  expect(paswordInputEl.value).toBe("")
+  expect(paswordInputEl.value).toBe("");
 });
 
 test("button should be disabled", () => {
   render(<Login />);
   const buttonInputEl = screen.getByRole("button");
-  expect(buttonInputEl).toBeDisabled()
+  expect(buttonInputEl).toBeDisabled();
+});
+
+test("error message should not be visible", () => {
+  render(<Login />);
+  const errorEl = screen.getByTestId("error");
+  expect(errorEl).not.toBeVisible();
 });
