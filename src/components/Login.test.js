@@ -42,11 +42,11 @@ test("username input should change", () => {
 
 test("password input should change", () => {
   render(<Login />);
-  const paswordInputEl = screen.getByPlaceholderText(/password/i);
+  const passwordInputEl = screen.getByPlaceholderText(/password/i);
   const testValue = "test";
 
   fireEvent.change(passwordInputEl, { target: { value: testValue } });
-  expect(paswordInputEl.value).toBe(testValue);
+  expect(passwordInputEl.value).toBe(testValue);
 });
 
 test("button should be disabled", () => {
