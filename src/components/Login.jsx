@@ -4,6 +4,15 @@ const Login = () => {
   const [error, setError] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+
+  const handleClick = (e) => {
+    e.preventDefault();
+
+    try {
+    } catch {
+      setError(true);
+    }
+  };
   return (
     <div className="container">
       <form>
@@ -19,7 +28,9 @@ const Login = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button disabled={!username || !password}>Login</button>
+        <button disabled={!username || !password} onClick={handleClick}>
+          Login
+        </button>
         <span
           data-testid="error"
           style={{ visibility: error ? "visible" : "hidden" }}
