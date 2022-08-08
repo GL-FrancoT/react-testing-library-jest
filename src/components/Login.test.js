@@ -34,13 +34,19 @@ test("password input should be empty", () => {
 test("username input should change", () => {
   render(<Login />);
   const usernameInputEl = screen.getByPlaceholderText(/username/i);
-  expect(usernameInputEl.value).toBe("");
+  const testValue = "test";
+
+  fireEvent.change(usernameInputEl, { target: { value: testValue } });
+  expect(usernameInputEl.value).toBe(testValue);
 });
 
 test("password input should change", () => {
   render(<Login />);
   const paswordInputEl = screen.getByPlaceholderText(/password/i);
-  expect(paswordInputEl.value).toBe("");
+  const testValue = "test";
+
+  fireEvent.change(passwordInputEl, { target: { value: testValue } });
+  expect(paswordInputEl.value).toBe(testValue);
 });
 
 test("button should be disabled", () => {
