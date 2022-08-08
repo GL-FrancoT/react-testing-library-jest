@@ -7,11 +7,12 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [user, setUser] = useState({});
 
-  const handleClick = (e) => {
+  const handleClick = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
     try {
-      const { data } = axios.get(
+      const { data } = await axios.get(
         "https://jsonplaceholder.typicode.com/users/1"
       );
       setUser(data);
