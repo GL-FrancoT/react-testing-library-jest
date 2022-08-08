@@ -3,8 +3,8 @@ import Login from "./Login";
 
 test("username input should be rendered", () => {
   render(<Login />);
-  const userInputEl = screen.getByPlaceholderText(/username/i);
-  expect(userInputEl).toBeInTheDocument();
+  const usernameInputEl = screen.getByPlaceholderText(/username/i);
+  expect(usernameInputEl).toBeInTheDocument();
 });
 
 test("password input should be rendered", () => {
@@ -21,11 +21,23 @@ test("button should be rendered", () => {
 
 test("username input should be empty", () => {
   render(<Login />);
-  const userInputEl = screen.getByPlaceholderText(/username/i);
-  expect(userInputEl.value).toBe("");
+  const usernameInputEl = screen.getByPlaceholderText(/username/i);
+  expect(usernameInputEl.value).toBe("");
 });
 
 test("password input should be empty", () => {
+  render(<Login />);
+  const paswordInputEl = screen.getByPlaceholderText(/password/i);
+  expect(paswordInputEl.value).toBe("");
+});
+
+test("username input should change", () => {
+  render(<Login />);
+  const usernameInputEl = screen.getByPlaceholderText(/username/i);
+  expect(usernameInputEl.value).toBe("");
+});
+
+test("password input should change", () => {
   render(<Login />);
   const paswordInputEl = screen.getByPlaceholderText(/password/i);
   expect(paswordInputEl.value).toBe("");
