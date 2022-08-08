@@ -25,8 +25,14 @@ test("username input should be empty", () => {
   expect(userInputEl.value).toBe("")
 });
 
-test("PASSWORD input should be empty", () => {
+test("password input should be empty", () => {
   render(<Login />);
   const paswordInputEl = screen.getByPlaceholderText(/password/i);
   expect(paswordInputEl.value).toBe("")
+});
+
+test("button should be disabled", () => {
+  render(<Login />);
+  const buttonInputEl = screen.getByRole("button");
+  expect(buttonInputEl).toBeDisabled()
 });
