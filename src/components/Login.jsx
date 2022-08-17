@@ -16,7 +16,7 @@ const Login = () => {
       const { data } = await axios.get(
         "https://jsonplaceholder.typicode.com/users/1"
       );
-      setUser(data);
+      setUser(data); // Uncomment in order to test mocked data
     } catch {
       setError(true);
     }
